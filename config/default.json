@@ -1,0 +1,17 @@
+{
+    "mongoURI": "mongodb+srv://chris10:96BFAm5e9DtC2LUP@cluster0-friqx.azure.mongodb.net/b2c?retryWrites=true&w=majority",
+    "discoverJwtTokenUrl": "https://cloutcompute.b2clogin.com/cloutcompute.onmicrosoft.com/discovery/v2.0/keys?p=B2C_1_realFlow",
+    "jwtSecret": "secret",
+    "githubToken": "",
+    "AZURE_STORAGE_CONNECTION_STRING" : "DefaultEndpointsProtocol=https;AccountName=amsstoragex;AccountKey=H/qO5NvRma/87WgHtoheAwB/8XoYTHQo7SyNJd7VQLrvpyX6PmLET7hC90TDjxlpoCrvezg7xf1B95KGLeCOww==;EndpointSuffix=core.windows.net",
+    "armAadAudience" :  "https://management.core.windows.net/",
+    "aadEndpoint" :  "https://login.microsoftonline.com/",
+    "armEndpoint" :  "https://management.azure.com/",
+    "aadClientId" :  "345a303a-8131-477a-954c-ad92c4d48194",
+    "aadSecret" : "g?zwRZsgwJBF@@7Yh7kYqDJ8/mbhYuT3",
+    "aadTenantId" : "412a3c2f-5d29-49ae-9c7d-406c715be5ff",
+    "accountName" : "amsmediax",
+    "subscriptionId" :  "64481a7c-eb04-4e12-a63e-346299432398",
+    "region" : "West US 2",
+    "resourceGroup" : "amsResourceGroup"
+  }
