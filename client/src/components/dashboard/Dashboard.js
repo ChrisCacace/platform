@@ -5,12 +5,15 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import DashboardActions from './DashboardActions';
 import { getCurrentProfile, deleteAccount } from '../../actions/profile';
+import { logout } from '../../actions/auth';
+
 
 const Dashboard = ({
   getCurrentProfile,
   deleteAccount,
   auth: { user },
-  profile: { profile, loading }
+  profile: { profile, loading },
+  logout
 }) => {
   useEffect(() => {
     getCurrentProfile();
@@ -32,6 +35,12 @@ const Dashboard = ({
               <i className='fas fa-user-minus' /> Delete My Account
             </button>
           </div>
+          <div>
+            <a onClick={logout} href='#!'>
+            <i className='fas fa-sign-out-alt' />{' '}
+            <span className='hide-sm'>Logout</span>
+            </a>
+          </div>
         </Fragment>
       ) : (
         <Fragment>
@@ -49,7 +58,8 @@ Dashboard.propTypes = {
   getCurrentProfile: PropTypes.func.isRequired,
   deleteAccount: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
-  profile: PropTypes.object.isRequired
+  profile: PropTypes.object.isRequired,
+  logout: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = state => ({
@@ -59,5 +69,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { getCurrentProfile, deleteAccount }
+  { getCurrentProfile, deleteAccount, logout }
 )(Dashboard);
