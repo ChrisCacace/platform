@@ -2,8 +2,8 @@ import * as Msal from 'msal';
 
 const config = {
     auth: {
-        clientId: "ab8f5eb8-b0d5-4202-95a8-595231fc9345",
-        authority: "https://cloutcompute.b2clogin.com/cloutcompute.onmicrosoft.com/B2C_1_realFlow",
+        clientId: "0b814c5c-8524-466c-bd3a-5f1b4714494c",
+        authority: "https://hedons.b2clogin.com/hedons.onmicrosoft.com/B2C_1_flow",
         redirectUri: 'http://localhost:3000',
         validateAuthority: false,
         navigateToLoginRequestUrl: false
@@ -15,7 +15,7 @@ const config = {
 };
 
 const loginRequest = {
-    scopes: ["https://cloutcompute.onmicrosoft.com/api/user_impersonation"],
+    scopes: ["https://hedons.onmicrosoft.com/api/user_impersonation"],
     loginHint: null
 };
 

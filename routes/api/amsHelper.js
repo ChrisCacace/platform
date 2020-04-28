@@ -178,6 +178,8 @@ async function ensureTransformExists(resourceGroup, accountName, transformName, 
 return transform;
 }
 
+
+
 async function createStreamingLocator(resourceGroup, accountName, assetName, locatorName)
 {
   let streamingLocator = {
