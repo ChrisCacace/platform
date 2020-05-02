@@ -7,10 +7,16 @@ const Navbar = ({ auth: { isAuthenticated, loading } }) => {
   const authLinks = (
     <ul>
       <li>
-        <Link to='/profiles'>Developers</Link>
+        <Link to='/posts'>Discover</Link>
       </li>
       <li>
-        <Link to='/posts'>Posts</Link>
+        <Link to='/profiles'>Search</Link>
+      </li>
+      <li>
+        <Link to='/create'>Create</Link>
+      </li>
+      <li>
+        <Link to='/messaging'>Messages</Link>
       </li>
       <li>
         <Link to='/dashboard'>
@@ -37,11 +43,6 @@ const Navbar = ({ auth: { isAuthenticated, loading } }) => {
 
   return (
     <nav className='navbar bg-dark'>
-      <h1>
-        <Link to='/'>
-          <i className='fas fa-code' /> Platform
-        </Link>
-      </h1>
       {!loading && (
         <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
       )}

@@ -23,7 +23,7 @@ class Player extends Component {
 
   createVideoPlayer = (amp) => {
     const video = amp(this.videoRef, {
-      nativeControlsForTouch: false,
+      nativeControlsForTouch: true,
       autoplay: false,
       width: "640",
       height: "400",
@@ -34,6 +34,9 @@ class Player extends Component {
         'html5FairPlayHLS',
         'html5',
       ],
+      hotKeys: {
+        enableVolumeScroll: false
+      },
       plugins: {
         appInsights: {
             //add additonal plugin options here

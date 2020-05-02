@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import Spinner from '../layout/Spinner';
 import ProfileTop from './ProfileTop';
 import ProfileAbout from './ProfileAbout';
-import ProfileGithub from './ProfileGithub';
 import { getProfileById } from '../../actions/profile';
+import ProfilePosts from '../posts/ProfilePosts';
+
 
 const Profile = ({
   getProfileById,
@@ -37,9 +38,7 @@ const Profile = ({
           <div className='profile-grid my-1'>
             <ProfileTop profile={profile} />
             <ProfileAbout profile={profile} />
-            {profile.githubusername && (
-              <ProfileGithub username={profile.githubusername} />
-            )}
+            <ProfilePosts match = {match}/>
           </div>
         </Fragment>
       )}

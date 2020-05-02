@@ -39,10 +39,7 @@ router.post(
   [
     auth,
     [
-      check('status', 'Status is required')
-        .not()
-        .isEmpty(),
-      check('skills', 'Skills is required')
+      check('bio', 'Bio is required')
         .not()
         .isEmpty()
     ]
@@ -53,13 +50,8 @@ router.post(
       return res.status(400).json({ errors: errors.array() });
     }
     const {
-      company,
-      location,
       website,
       bio,
-      skills,
-      status,
-      githubusername,
       youtube,
       twitter,
       instagram,
@@ -69,15 +61,8 @@ router.post(
 
     const profileFields = {
       user: req.user.id,
-      company,
-      location,
       website: website === '' ? '' : normalize(website, { forceHttps: true }),
-      bio,
-      skills: Array.isArray(skills)
-        ? skills
-        : skills.split(',').map(skill => ' ' + skill.trim()),
-      status,
-      githubusername
+      bio
     };
 
     // Build social object and add to profileFields

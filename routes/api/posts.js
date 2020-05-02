@@ -65,13 +65,27 @@ router.get('/', auth, async (req, res) => {
 router.get('/:id', auth, async (req, res) => {
   try {
     const post = await Post.findById(req.params.id);
-
+    console.log(req.params.id);
     // Check for ObjectId format and post
     if (!req.params.id.match(/^[0-9a-fA-F]{24}$/) || !post) {
       return res.status(404).json({ msg: 'Post not found' });
     }
 
     res.json(post);
+  } catch (err) {
+    console.error(err.message);
+
+    res.status(500).send('Server Error');
+  }
+});
+
+// @route    GET api/posts/user/:id
+// @desc     Get posts by userID
+// @access   Private
+router.get('/user/:id', auth, async (req, res) => {
+  try {
+    const posts = await Post.find({user: req.params.id}).sort({ date: -1 });
+    res.json(posts);
   } catch (err) {
     console.error(err.message);
 
